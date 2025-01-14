@@ -1,0 +1,67 @@
+default_config:
+
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensor.yaml
+sonoff: !include sonoff.yaml
+shell_command: !include shell_command.yaml
+template: !include template.yaml
+#switch: !include switch.yaml
+
+# Abilita la Cartella Packages
+homeassistant:
+  packages: !include_dir_named packages
+  auth_mfa_modules:
+    - type: totp
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: 20
+  unit_system: metric
+  currency: EUR
+  country: IT
+  time_zone: "Europe/Rome"
+  external_url: !secret external_url
+  internal_url: !secret internal_url
+
+zone:
+  - name: Home
+    latitude: !secret home_latitude
+    longitude: !secret home_longitude
+    radius: 50
+  - name: Box Auto
+    latitude: !secret Box_Auto_latitude
+    longitude: !secret Box_Auto_longitude
+    radius: 20
+  - name: Sede Lavoro Giovanni
+    latitude: !secret work_giovanni_latitude
+    longitude: !secret work_giovanni_longitude
+    radius: 100
+  - name: Sede lavoro FLora
+    latitude: !secret work_flora_latitude
+    longitude: !secret work_flora_longitude
+    radius: 100
+  - name: Casa Scauri
+    latitude: !secret scauri_latitude
+    longitude: !secret scauri_longitude
+    radius: 50
+lovelace:
+  resources:
+    - url: /local/mini-graph-card-bundle.js
+      type: module
+
+recorder:
+  purge_keep_days: 7 # Adjust as needed based on how long you want to keep the data
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies: 10.211.12.4
+
+#   # Maxcude Radiatori
+# maxcube:
+#   gateways:
+#     - host: !secret maxcube_host

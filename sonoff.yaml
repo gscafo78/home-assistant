@@ -1,0 +1,6 @@
+username: !secret sonoff_username
+password: !secret sonoff_password
+force_update: [temperature, power]
+scan_interval: "00:01:00" # (optional) default 5 minutes
+sensors: [temperature, humidity, power, current, voltage]
+mode: local

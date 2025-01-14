@@ -1,0 +1,431 @@
+2025-01-14 11:07:19.702 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-01-14 11:07:19.703 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration imou_life which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-01-14 11:07:19.703 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tesla_custom which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-01-14 11:07:19.704 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration sonoff which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-01-14 11:07:20.617 WARNING (MainThread) [homeassistant.components.lovelace] Lovelace is running in storage mode. Define resources via user interface
+2025-01-14 11:07:22.972 ERROR (MainThread) [homeassistant.components.automation] Automation with alias 'switch_off_irrigation_after_3_minutes' could not be validated and has been disabled: expected str for dictionary value @ data['id']. Got 1701864938346
+2025-01-14 11:07:24.541 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.living_termostato_a_parete.attributes.current_temperature }}'
+2025-01-14 11:07:24.542 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.living_termostato_a_parete.attributes.current_temperature }}'
+2025-01-14 11:07:24.542 ERROR (MainThread) [homeassistant.core] Error running job: <Job onetime listen homeassistant_start <function _async_at_core_state.<locals>._matched_event at 0x7f42105a8d60> HassJobType.Callback <_OneTimeListener homeassistant.helpers.start:<function _async_at_core_state.<locals>._matched_event at 0x7f42105a8d60>>>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 635, in state
+    numerical_value = int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 638, in state
+    numerical_value = float(value)
+ValueError: could not convert string to float: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1578, in async_fire_internal
+    self._hass.async_run_hass_job(job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1439, in __call__
+    self.hass.async_run_hass_job(self.listener_job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/start.py", line 44, in _matched_event
+    hass.async_run_hass_job(at_start_job, hass)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 517, in _async_template_startup
+    result_info.async_refresh()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1127, in async_refresh
+    self._refresh(None)
+    ~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1313, in _refresh
+    self.hass.async_run_hass_job(self._job, event, updates)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 463, in _handle_results
+    self.async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1023, in async_write_ha_state
+    self._async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1148, in _async_write_ha_state
+    self.__async_calculate_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1085, in __async_calculate_state
+    state = self._stringify_state(available)
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1029, in _stringify_state
+    if (state := self.state) is None:
+                 ^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 642, in state
+    raise ValueError(
+    ...<5 lines>...
+    ) from err
+ValueError: Sensor sensor.max_termostato_parete_temperature has device class 'None', state class 'None' unit '°C' and suggested precision 'None' thus indicating it has a numeric value; however, it has the non-numeric value: '' (<class 'str'>)
+2025-01-14 11:07:24.551 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.bagno_nero_bagno_nero.attributes.current_temperature }}'
+2025-01-14 11:07:24.551 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.bagno_nero_bagno_nero.attributes.current_temperature }}'
+2025-01-14 11:07:24.551 ERROR (MainThread) [homeassistant.core] Error running job: <Job onetime listen homeassistant_start <function _async_at_core_state.<locals>._matched_event at 0x7f42105a8fe0> HassJobType.Callback <_OneTimeListener homeassistant.helpers.start:<function _async_at_core_state.<locals>._matched_event at 0x7f42105a8fe0>>>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 635, in state
+    numerical_value = int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 638, in state
+    numerical_value = float(value)
+ValueError: could not convert string to float: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1578, in async_fire_internal
+    self._hass.async_run_hass_job(job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1439, in __call__
+    self.hass.async_run_hass_job(self.listener_job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/start.py", line 44, in _matched_event
+    hass.async_run_hass_job(at_start_job, hass)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 517, in _async_template_startup
+    result_info.async_refresh()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1127, in async_refresh
+    self._refresh(None)
+    ~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1313, in _refresh
+    self.hass.async_run_hass_job(self._job, event, updates)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 463, in _handle_results
+    self.async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1023, in async_write_ha_state
+    self._async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1148, in _async_write_ha_state
+    self.__async_calculate_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1085, in __async_calculate_state
+    state = self._stringify_state(available)
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1029, in _stringify_state
+    if (state := self.state) is None:
+                 ^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 642, in state
+    raise ValueError(
+    ...<5 lines>...
+    ) from err
+ValueError: Sensor sensor.max_termostato_bagno_nero has device class 'None', state class 'None' unit '°C' and suggested precision 'None' thus indicating it has a numeric value; however, it has the non-numeric value: '' (<class 'str'>)
+2025-01-14 11:07:24.555 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.bagno_rosso_bagno_rosso.attributes.current_temperature }}'
+2025-01-14 11:07:24.555 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.bagno_rosso_bagno_rosso.attributes.current_temperature }}'
+2025-01-14 11:07:24.555 ERROR (MainThread) [homeassistant.core] Error running job: <Job onetime listen homeassistant_start <function _async_at_core_state.<locals>._matched_event at 0x7f42105a9260> HassJobType.Callback <_OneTimeListener homeassistant.helpers.start:<function _async_at_core_state.<locals>._matched_event at 0x7f42105a9260>>>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 635, in state
+    numerical_value = int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 638, in state
+    numerical_value = float(value)
+ValueError: could not convert string to float: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1578, in async_fire_internal
+    self._hass.async_run_hass_job(job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1439, in __call__
+    self.hass.async_run_hass_job(self.listener_job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/start.py", line 44, in _matched_event
+    hass.async_run_hass_job(at_start_job, hass)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 517, in _async_template_startup
+    result_info.async_refresh()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1127, in async_refresh
+    self._refresh(None)
+    ~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1313, in _refresh
+    self.hass.async_run_hass_job(self._job, event, updates)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 463, in _handle_results
+    self.async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1023, in async_write_ha_state
+    self._async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1148, in _async_write_ha_state
+    self.__async_calculate_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1085, in __async_calculate_state
+    state = self._stringify_state(available)
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1029, in _stringify_state
+    if (state := self.state) is None:
+                 ^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 642, in state
+    raise ValueError(
+    ...<5 lines>...
+    ) from err
+ValueError: Sensor sensor.max_termostato_bagno_rosso has device class 'None', state class 'None' unit '°C' and suggested precision 'None' thus indicating it has a numeric value; however, it has the non-numeric value: '' (<class 'str'>)
+2025-01-14 11:07:24.559 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.camera_camera.attributes.current_temperature }}'
+2025-01-14 11:07:24.559 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.camera_camera.attributes.current_temperature }}'
+2025-01-14 11:07:24.559 ERROR (MainThread) [homeassistant.core] Error running job: <Job onetime listen homeassistant_start <function _async_at_core_state.<locals>._matched_event at 0x7f42105a94e0> HassJobType.Callback <_OneTimeListener homeassistant.helpers.start:<function _async_at_core_state.<locals>._matched_event at 0x7f42105a94e0>>>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 635, in state
+    numerical_value = int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 638, in state
+    numerical_value = float(value)
+ValueError: could not convert string to float: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1578, in async_fire_internal
+    self._hass.async_run_hass_job(job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1439, in __call__
+    self.hass.async_run_hass_job(self.listener_job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/start.py", line 44, in _matched_event
+    hass.async_run_hass_job(at_start_job, hass)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 517, in _async_template_startup
+    result_info.async_refresh()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1127, in async_refresh
+    self._refresh(None)
+    ~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1313, in _refresh
+    self.hass.async_run_hass_job(self._job, event, updates)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 463, in _handle_results
+    self.async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1023, in async_write_ha_state
+    self._async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1148, in _async_write_ha_state
+    self.__async_calculate_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1085, in __async_calculate_state
+    state = self._stringify_state(available)
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1029, in _stringify_state
+    if (state := self.state) is None:
+                 ^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 642, in state
+    raise ValueError(
+    ...<5 lines>...
+    ) from err
+ValueError: Sensor sensor.max_termostato_camera has device class 'None', state class 'None' unit '°C' and suggested precision 'None' thus indicating it has a numeric value; however, it has the non-numeric value: '' (<class 'str'>)
+2025-01-14 11:07:24.562 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.living_cucina.attributes.current_temperature }}'
+2025-01-14 11:07:24.563 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.living_cucina.attributes.current_temperature }}'
+2025-01-14 11:07:24.563 ERROR (MainThread) [homeassistant.core] Error running job: <Job onetime listen homeassistant_start <function _async_at_core_state.<locals>._matched_event at 0x7f42105a9760> HassJobType.Callback <_OneTimeListener homeassistant.helpers.start:<function _async_at_core_state.<locals>._matched_event at 0x7f42105a9760>>>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 635, in state
+    numerical_value = int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 638, in state
+    numerical_value = float(value)
+ValueError: could not convert string to float: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1578, in async_fire_internal
+    self._hass.async_run_hass_job(job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1439, in __call__
+    self.hass.async_run_hass_job(self.listener_job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/start.py", line 44, in _matched_event
+    hass.async_run_hass_job(at_start_job, hass)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 517, in _async_template_startup
+    result_info.async_refresh()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1127, in async_refresh
+    self._refresh(None)
+    ~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1313, in _refresh
+    self.hass.async_run_hass_job(self._job, event, updates)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 463, in _handle_results
+    self.async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1023, in async_write_ha_state
+    self._async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1148, in _async_write_ha_state
+    self.__async_calculate_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1085, in __async_calculate_state
+    state = self._stringify_state(available)
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1029, in _stringify_state
+    if (state := self.state) is None:
+                 ^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 642, in state
+    raise ValueError(
+    ...<5 lines>...
+    ) from err
+ValueError: Sensor sensor.max_termostato_living_cucina has device class 'None', state class 'None' unit '°C' and suggested precision 'None' thus indicating it has a numeric value; however, it has the non-numeric value: '' (<class 'str'>)
+2025-01-14 11:07:24.566 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.living_ingresso.attributes.current_temperature }}'
+2025-01-14 11:07:24.566 WARNING (MainThread) [homeassistant.helpers.template] Template variable warning: 'homeassistant.util.read_only_dict.ReadOnlyDict object' has no attribute 'current_temperature' when rendering '{{ states.climate.living_ingresso.attributes.current_temperature }}'
+2025-01-14 11:07:24.566 ERROR (MainThread) [homeassistant.core] Error running job: <Job onetime listen homeassistant_start <function _async_at_core_state.<locals>._matched_event at 0x7f42105a99e0> HassJobType.Callback <_OneTimeListener homeassistant.helpers.start:<function _async_at_core_state.<locals>._matched_event at 0x7f42105a99e0>>>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 635, in state
+    numerical_value = int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 638, in state
+    numerical_value = float(value)
+ValueError: could not convert string to float: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1578, in async_fire_internal
+    self._hass.async_run_hass_job(job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1439, in __call__
+    self.hass.async_run_hass_job(self.listener_job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/start.py", line 44, in _matched_event
+    hass.async_run_hass_job(at_start_job, hass)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 517, in _async_template_startup
+    result_info.async_refresh()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1127, in async_refresh
+    self._refresh(None)
+    ~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1313, in _refresh
+    self.hass.async_run_hass_job(self._job, event, updates)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 940, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 463, in _handle_results
+    self.async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1023, in async_write_ha_state
+    self._async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1148, in _async_write_ha_state
+    self.__async_calculate_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1085, in __async_calculate_state
+    state = self._stringify_state(available)
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1029, in _stringify_state
+    if (state := self.state) is None:
+                 ^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 642, in state
+    raise ValueError(
+    ...<5 lines>...
+    ) from err
+ValueError: Sensor sensor.max_termostato_living_ingresso has device class 'None', state class 'None' unit '°C' and suggested precision 'None' thus indicating it has a numeric value; however, it has the non-numeric value: '' (<class 'str'>)
+2025-01-14 11:15:33.050 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'tesla_custom' sets option flow config_entry explicitly, which is deprecated at custom_components/tesla_custom/config_flow.py, line 204: self.config_entry = config_entry. This will stop working in Home Assistant 2025.12, please create a bug report at https://github.com/alandtse/tesla/issues
+2025-01-14 11:17:51.692 ERROR (MainThread) [homeassistant.components.automation] Automation with alias 'switch_off_irrigation_after_3_minutes' could not be validated and has been disabled: expected str for dictionary value @ data['id']. Got 1701864938346
+2025-01-14 11:17:54.457 ERROR (MainThread) [homeassistant.components.automation] Automation with alias 'switch_off_irrigation_after_3_minutes' could not be validated and has been disabled: expected str for dictionary value @ data['id']. Got 1701864938346
+2025-01-14 11:17:57.980 WARNING (Recorder) [homeassistant.util.executor] Thread[DbWorker_0] is still running at shutdown: File "/usr/local/lib/python3.13/threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/local/lib/python3.13/threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.13/threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/src/homeassistant/homeassistant/components/recorder/executor.py", line 23, in _worker_with_shutdown_hook
+    shutdown_hook()
+  File "/usr/src/homeassistant/homeassistant/components/recorder/core.py", line 289, in _shutdown_pool
+    self.engine.pool.shutdown()
+  File "/usr/src/homeassistant/homeassistant/components/recorder/pool.py", line 86, in shutdown
+    conn.close()
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 784, in close
+    self.__close()
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 883, in __close
+    self.__pool._close_connection(
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 376, in _close_connection
+    self._dialect.do_close(connection)
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 708, in do_close
+    dbapi_connection.close()

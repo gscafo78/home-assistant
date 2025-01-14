@@ -1,0 +1,8 @@
+bind = "0.0.0.0"
+[[cameras]]
+name = "reolink_argus_eco"
+username = !secret camera_user
+password = !secret camera_password
+uid = "952700013HF5OBSN"
+stream = "subStream"
+idle_disconnect = true
