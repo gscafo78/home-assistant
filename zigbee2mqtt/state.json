@@ -19,13 +19,13 @@
         "schedule_friday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0"
     },
     "0xa4c1381a73981eff": {
-        "humidity": 16,
+        "humidity": 19,
         "temperature_unit": "celsius",
         "temperature_calibration": 0,
         "humidity_calibration": 0,
         "battery": 50,
         "linkquality": 47,
-        "temperature": 21.2
+        "temperature": 19.1
     },
     "0xa4c13822e9318541": {
         "voltage": 222,
@@ -155,7 +155,7 @@
         "linkquality": 105
     },
     "0xa4c1383c9974f2ed": {
-        "humidity": 46.1,
+        "humidity": 46.8,
         "temperature": 20.5,
         "battery": 100,
         "voltage": 3000,

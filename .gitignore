@@ -7,7 +7,9 @@ id_rsa*
 .backups/
 .backup/
 storage/
+*.db
 *.log
+*.log.1
 *.db-shm
 *.db-wal
 *.fault
