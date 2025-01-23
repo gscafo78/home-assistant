@@ -3,13 +3,16 @@ default_config:
 frontend:
   themes: !include_dir_merge_named themes
 
-automation: !include automations.yaml
+automation: !include_dir_merge_list automations/
+#automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 sensor: !include sensor.yaml
 sonoff: !include sonoff.yaml
 shell_command: !include shell_command.yaml
 template: !include template.yaml
+input_boolean: !include input_booleans.yaml
+
 #switch: !include switch.yaml
 
 # Abilita la Cartella Packages
@@ -60,8 +63,10 @@ recorder:
 http:
   use_x_forwarded_for: true
   trusted_proxies: 10.211.12.4
-
-#   # Maxcude Radiatori
-# maxcube:
-#   gateways:
-#     - host: !secret maxcube_host
+# input_boolean:
+#   radiator_set_auto:
+#     name: Radiator Auto
+#   radiator_set_heat:
+#     name: Radiator Heat
+#   radiator_set_off:
+#     name: Radiator Off

@@ -43,8 +43,6 @@ devices:
   '0xa4c1383ffdd376bc':
     friendly_name: Radiatore_bagno_nero
     description: Termostato Bagno Nero
-  '0xa4c1381a73981eff':
-    friendly_name: Termometro_out
   '0xa4c13822e9318541':
     friendly_name: Presa_lavastoviglie
   '0xa4c13884357b1a7b':
@@ -61,6 +59,14 @@ devices:
     friendly_name: Radiatore_bagno_rosso
   '0xa4c1383c9974f2ed':
     friendly_name: Termometro_living
+    temperature_precision: 3
+  '0xa4c138faa331d764':
+    friendly_name: Press_bagno_nero
+  '0xa4c1381a73981eff':
+    friendly_name: Termometro_outdoor
+    temperature_precision: 3
+    temperature_calibration: -3
+    humidity_calibration: ''
 groups:
   '1':
     friendly_name: Radiatori

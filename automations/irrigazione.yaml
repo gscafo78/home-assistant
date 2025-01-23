@@ -1,0 +1,15 @@
+- id: 1701864938346
+  alias: switch_off_irrigation_after_3_minutes
+  description: Turn Off "Irrigazione" after 3 minutes
+  trigger:
+    - platform: state
+      entity_id:
+        - switch.sonoff_10006965b5
+      to: "on"
+  action:
+    - delay: 00:03:00
+    - service: switch.turn_off
+      target:
+        entity_id:
+          - switch.sonoff_10006965b5
+  mode: single

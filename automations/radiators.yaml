@@ -1,0 +1,81 @@
+- alias: "Radiator Auto Selected"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.radiator_set_auto
+      to: "on"
+  action:
+    # Turn off other input_booleans
+    - service: input_boolean.turn_off
+      target:
+        entity_id:
+          - input_boolean.radiator_set_heat
+          - input_boolean.radiator_set_off
+    # Set the HVAC mode to auto
+    - service: climate.set_hvac_mode
+      data:
+        entity_id:
+          - climate.radiatore_bagno_nero
+          - climate.radiatore_bagno_rosso
+          - climate.radiatore_camera
+          - climate.radiatore_cameretta
+          - climate.radiatore_cucina
+          - climate.radiatore_ingresso
+        hvac_mode: auto
+
+- alias: "Radiator Heat Selected"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.radiator_set_heat
+      to: "on"
+  action:
+    # Turn off other input_booleans
+    - service: input_boolean.turn_off
+      target:
+        entity_id:
+          - input_boolean.radiator_set_auto
+          - input_boolean.radiator_set_off
+    # Set the HVAC mode to heat
+    - service: climate.set_hvac_mode
+      data:
+        entity_id:
+          - climate.radiatore_bagno_nero
+          - climate.radiatore_bagno_rosso
+          - climate.radiatore_camera
+          - climate.radiatore_cameretta
+          - climate.radiatore_cucina
+          - climate.radiatore_ingresso
+        hvac_mode: heat
+    # Set the temperature to 20°C
+    - service: climate.set_temperature
+      data:
+        entity_id:
+          - climate.radiatore_bagno_nero
+          - climate.radiatore_bagno_rosso
+          - climate.radiatore_camera
+          - climate.radiatore_cameretta
+          - climate.radiatore_cucina
+          - climate.radiatore_ingresso
+        temperature: 20
+
+- alias: "Radiator Off Selected"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.radiator_set_off
+      to: "on"
+  action:
+    # Turn off other input_booleans
+    - service: input_boolean.turn_off
+      target:
+        entity_id:
+          - input_boolean.radiator_set_auto
+          - input_boolean.radiator_set_heat
+    # Turn off the radiators
+    - service: climate.turn_off
+      target:
+        entity_id:
+          - climate.radiatore_bagno_nero
+          - climate.radiatore_bagno_rosso
+          - climate.radiatore_camera
+          - climate.radiatore_cameretta
+          - climate.radiatore_cucina
+          - climate.radiatore_ingresso

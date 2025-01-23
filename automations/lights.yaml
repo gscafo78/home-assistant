@@ -1,0 +1,19 @@
+- id: "1704909861330"
+  alias: switch_off_hall_after_10_minutes
+  description: Turn Off "luci Ingresso" after 10 minutes
+  trigger:
+    - platform: state
+      entity_id:
+        - switch.sonoff_1001250e7b
+        - switch.sonoff_1001261672
+      to: "on"
+  condition: []
+  action:
+    - delay:
+        minutes: 10
+    - service: switch.turn_off
+      target:
+        entity_id:
+          - switch.sonoff_1001250e7b
+          - switch.sonoff_1001261672
+  mode: restart

@@ -1,0 +1,307 @@
+- id: switch.sonoff_1000463749_3
+  alias: Balcone Cucina is Closing
+  description: Turn Off "Balcone Cucina Open" when Balcone da Cucina is Closing
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_1000463749_3
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_1000463749_4
+- id: switch.sonoff_1000463749_4
+  alias: Balcone Cucina is Opening
+  description: Turn Off "Balcone Cucina Close" when Balcone da Cucina is Opening
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_1000463749_4
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_1000463749_3
+- id: switch.sonoff_1000463749_1
+  alias: Finestra Cucina is Closing
+  description: Turn Off "Finestra Cucina Open" when Finestra Cucina is Closing
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_1000463749_1
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_1000463749_2
+- id: switch.sonoff_1000463749_2
+  alias: Finestra Cucina is Opening
+  description: Turn Off "Finestra Cucina Close" when Finestra Cucina is Opening
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_1000463749_2
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_1000463749_1
+- id: switch.sonoff_10005a9fdb_1
+  alias: Finestra Salotto is Closing
+  description: Turn Off "Finestra Salotto Open" when Finestra Salotto is Closing
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_10005a9fdb_1
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_10005a9fdb_2
+- id: switch.sonoff_10005a9fdb_2
+  alias: Finestra Salotto is Opening
+  description: Turn Off "Finestra Salotto Close" when Finestra Salotto is Opening
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_10005a9fdb_2
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_10005a9fdb_1
+- id: switch.sonoff_1000205d78_1
+  alias: Finestra Camera is Closing
+  description: Turn Off "Finestra Camera Open" when Finestra Camera is Closing
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_1000205d78_1
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_1000205d78_2
+- id: switch.sonoff_1000205d78_2
+  alias: Finestra Camera is Opening
+  description: Turn Off "Finestra Camera Close" when Finestra Camera is Opening
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_1000205d78_2
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_1000205d78_1
+- id: switch.sonoff_1000a8c8b9_1
+  alias: Finestra Cameretta is Closing
+  description: Turn Off "Finestra Cameretta Open" when Finestra Cameretta is Closing
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_1000a8c8b9_1
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_1000a8c8b9_2
+- id: switch.sonoff_1000a8c8b9_2
+  alias: Finestra Cameretta is Opening
+  description: Turn Off "Finestra Cameretta Close" when Finestra Cameretta is Opening
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_1000a8c8b9_2
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_1000a8c8b9_1
+- id: switch.sonoff_1000205d78_3
+  alias: Finestra Bagno is Closing
+  description: Turn Off "Finestra Bagno Open" when Finestra Bagno is Closing
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_1000205d78_3
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_1000205d78_4
+- id: switch.sonoff_1000205d78_4
+  alias: Finestra Bagno is Opening
+  description: Turn Off "Finestra Bagno Close" when Finestra Bagno is Opening
+  trigger:
+    platform: state
+    entity_id: switch.sonoff_1000205d78_4
+    to: "on"
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_1000205d78_3
+- id: "1703430164476"
+  alias: Chiudi Tapparelle Giorno
+  description: Turn on "Tapparelle Living Close"
+  trigger:
+    platform: state
+    entity_id: input_boolean.tapparelle_giorno_down
+    to: "on"
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.sonoff_1000463749_1
+        - switch.sonoff_1000463749_3
+        - switch.sonoff_10005a9fdb_1
+    - delay: 00:00:30
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.tapparelle_giorno_down
+- id: "1703431561498"
+  alias: Apri Tapparelle Giorno
+  description: Open all living Shutters (Cucina Finestra e Balcone e Finestra Sala)
+  trigger:
+    - platform: state
+      entity_id: input_boolean.tapparelle_giorno_up
+      to: "on"
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.sonoff_1000463749_4
+        - switch.sonoff_1000463749_2
+        - switch.sonoff_10005a9fdb_2
+    - delay: 00:00:30
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.tapparelle_giorno_up
+- id: "1703600761257"
+  alias: Chiudi Tapparelle Notte
+  description: Turn on "Tapparelle Notte Close"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.tapparelle_notte_down
+      to: "on"
+  condition: []
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.sonoff_1000205d78_3
+        - switch.sonoff_1000205d78_1
+        - switch.sonoff_1000a8c8b9_1
+    - delay: 00:00:30
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.tapparelle_notte_down
+  mode: single
+- id: "1703601368917"
+  alias: Apri Tapparelle Notte
+  description: Turn on "Tapparelle Notte Open"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.tapparelle_notte_up
+      to: "on"
+  condition: []
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.sonoff_1000205d78_4
+        - switch.sonoff_1000205d78_2
+        - switch.sonoff_1000a8c8b9_2
+    - delay: 00:00:30
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.tapparelle_notte_up
+  mode: single
+- id: "1703434483212"
+  alias: Open bedrooms Shutters in the Morning
+  description:
+    Open shutters when input_boolean.tapparelle_up_mattina is on and it's
+    sunrise
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: 0
+  condition:
+    - condition: state
+      entity_id: input_boolean.tapparelle_notte_up_mattina
+      state: "on"
+  action:
+    - service: automation.trigger
+      data:
+        skip_condition: true
+      target:
+        entity_id: automation.chiudi_tapparelle_notte_2
+  mode: single
+- id: "1703434483213"
+  alias: Close bedrooms Shutters at Sunset
+  description:
+    Close shutters when "input_boolean.tapparelle_notte_down_sera" is setted
+    on "on" and it's sunset time
+  trigger:
+    - platform: sun
+      event: sunset
+  condition:
+    - condition: state
+      entity_id: input_boolean.tapparelle_notte_down_sera
+      state: "on"
+  action:
+    - service: automation.trigger
+      data:
+        skip_condition: true
+      target:
+        entity_id: automation.chiudi_tapparelle_notte
+  mode: single
+- id: "1703435043597"
+  alias: Close Living Shutters at Sunset
+  description:
+    Close shutters when "input_boolean.tapparelle_down_sera" is setted
+    on "on" and it's sunset time
+  trigger:
+    - platform: sun
+      event: sunset
+  condition:
+    - condition: state
+      entity_id: input_boolean.tapparelle_giorno_down_sera
+      state: "on"
+  action:
+    - service: automation.trigger
+      target:
+        entity_id: automation.chiudi_tapparelle_giorno
+      data:
+        skip_condition: true
+  mode: single
+- id: "1703435043598"
+  alias: Open Living Shutters at Sunrise
+  description:
+    Open shutters when "input_boolean.tapparelle_up_mattina" is setted
+    on "on" and it's sunrise time
+  trigger:
+    - platform: sun
+      event: sunrise
+  condition:
+    - condition: state
+      entity_id: input_boolean.tapparelle_up_mattina
+      state: "on"
+  action:
+    - service: automation.trigger
+      data:
+        skip_condition: true
+      target:
+        entity_id: automation.apri_tepparelle_lato_giorno
+  mode: single
+- id: "1704815834067"
+  alias: stop_living_shutter
+  description: Turn off "Tapparelle Living"
+  trigger:
+    - platform: state
+      entity_id:
+        - input_boolean.tapparelle_giorno_down
+        - input_boolean.tapparelle_giorno_up
+      to: "off"
+      from: "on"
+  condition: []
+  action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.sonoff_1000463749_1
+        - switch.sonoff_1000463749_2
+        - switch.sonoff_1000463749_3
+        - switch.sonoff_1000463749_4
+        - switch.sonoff_10005a9fdb_1
+        - switch.sonoff_10005a9fdb_2
+  mode: single
+- id: "1704816316509"
+  alias: stop_bedroom_shutter
+  description: Turn off "Tapparelle Notte"
+  trigger:
+    - platform: state
+      entity_id:
+        - input_boolean.tapparelle_notte_down
+        - input_boolean.tapparelle_notte_up
+      to: "off"
+      from: "on"
+  condition: []
+  action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.sonoff_1000205d78_1
+        - switch.sonoff_1000205d78_2
+        - switch.sonoff_1000205d78_3
+        - switch.sonoff_1000205d78_4
+        - switch.sonoff_1000a8c8b9_1
+        - switch.sonoff_1000a8c8b9_2
+  mode: single

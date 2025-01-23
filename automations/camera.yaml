@@ -1,0 +1,97 @@
+- id: "1701864938354"
+  alias: Telecamere Off
+  description: Quando sono a casa, spegni le telecamere
+  triggers:
+    - entity_id: device_tracker.t11_pro_giovanni
+      zone: zone.home
+      event: enter
+      trigger: zone
+    - entity_id: device_tracker.2312draabg
+      zone: zone.home
+      event: enter
+      trigger: zone
+  conditions: []
+  actions:
+    - type: turn_off
+      device_id: 47c6aeb7393e63ccaced5ac6ac1670f8
+      entity_id: 14d6f4058d08293cfd76350e4013a245
+      domain: switch
+  mode: single
+
+- id: "1701864988150"
+  alias: Telecamere On
+  description: Quando sono fuori casa, accendi le telecamere
+  triggers:
+    - entity_id: device_tracker.t11_pro_giovanni
+      zone: zone.home
+      event: leave
+      trigger: zone
+    - entity_id: device_tracker.2312draabg
+      zone: zone.home
+      event: leave
+      trigger: zone
+  conditions:
+    - condition: and
+      conditions:
+        - condition: not
+          conditions:
+            - condition: zone
+              entity_id: device_tracker.p30_flora
+              zone: zone.home
+        - condition: not
+          conditions:
+            - condition: zone
+              entity_id: device_tracker.t11_pro_giovanni
+              zone: zone.home
+  actions:
+    - type: turn_on
+      device_id: 47c6aeb7393e63ccaced5ac6ac1670f8
+      entity_id: 14d6f4058d08293cfd76350e4013a245
+      domain: switch
+  mode: single
+
+- id: "1702208545227"
+  alias: Camera_Cucina
+  description: ""
+  trigger:
+    - platform: state
+      entity_id:
+        - input_select.camera_pos
+        - automation.camera_cucina
+      from:
+      to: Cucina
+  condition: []
+  action:
+    - service: shell_command.front_camera_1
+      data: {}
+  mode: single
+- id: "1702209340453"
+  alias: Camera_PC
+  description: ""
+  trigger:
+    - platform: state
+      entity_id:
+        - input_select.camera_pos
+        - automation.camera_cucina
+      from:
+      to: PC
+  condition: []
+  action:
+    - service: shell_command.front_camera_2
+      data: {}
+  mode: single
+- id: "1702209419329"
+  alias: Camera_balcone
+  description: ""
+  trigger:
+    - platform: state
+      entity_id:
+        - input_select.camera_pos
+        - automation.camera_cucina
+      from:
+      to: Balcone
+  condition: []
+  action:
+    - service: shell_command.front_camera_3
+      data: {}
+  mode: single
