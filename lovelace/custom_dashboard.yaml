@@ -1,7 +1,9 @@
 views:
   - title: Main
-    path: e
+    path: home
     icon: mdi:home
+    visible:
+      - user: !secret user_giovanni
     badges: []
     cards:
       - type: custom:stack-in-card
@@ -243,7 +245,7 @@ views:
     path: Tapparelle
     subview: false
     visible:
-      - user: d627b04a00eb42ecb31788f8701a4ecb
+      - user: !secret user_giovanni
     badges: []
     cards:
       - type: custom:stack-in-card
@@ -679,7 +681,7 @@ views:
     icon: mdi:lightbulb
     subview: false
     visible:
-      - user: d627b04a00eb42ecb31788f8701a4ecb
+      - user: !secret user_giovanni
     badges: []
     cards:
       - type: custom:stack-in-card
@@ -1088,7 +1090,7 @@ views:
   #   icon: mdi:lightbulb
   #   subview: false
   #   visible:
-  #     - user: d627b04a00eb42ecb31788f8701a4ecb
+  #     - user: !secret user_giovanni
   #   badges: []
   #   cards:
   #     - type: vertical-stack
@@ -1172,7 +1174,7 @@ views:
   #   path: dispositivi
   #   icon: mdi:connection
   #   visible:
-  #     - user: d627b04a00eb42ecb31788f8701a4ecb
+  #     - user: !secret user_giovanni
   #   badges: []
   #   cards:
   #     - type: entities
