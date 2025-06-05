@@ -3,8 +3,8 @@ default_config:
 frontend:
   themes: !include_dir_merge_named themes
 
+
 automation: !include_dir_merge_list automations/
-#automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 sensor: !include sensor.yaml
@@ -12,7 +12,6 @@ sonoff: !include sonoff.yaml
 shell_command: !include shell_command.yaml
 template: !include template.yaml
 input_boolean: !include input_booleans.yaml
-
 #switch: !include switch.yaml
 
 # Abilita la Cartella Packages

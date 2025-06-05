@@ -1,142 +1,62 @@
 [
   {
-    "name": "Macinato di Manzo 1kg",
-    "id": "8f6c433bc3b04d1ead77c8c71f23a497",
-    "complete": true
-  },
-  {
-    "name": "Fagiolo neri precotti 650 g",
-    "id": "ce50374a00cc432f8be6889b86c45633",
-    "complete": true
-  },
-  {
-    "name": "Peperoni 300 g",
+    "name": "Peperoni",
     "id": "b5e1f1476b2e4239a0afd6614dfeb408",
     "complete": true
   },
   {
-    "name": "Cipolle 2",
+    "name": "Cipolle",
     "id": "53732dd180074326ab69ce2099f91246",
-    "complete": true
+    "complete": false
   },
   {
-    "name": "Pomodori pelati 600",
-    "id": "482faaf992aa47cbba1eb3d0dbc40291",
-    "complete": true
-  },
-  {
-    "name": "Paprica dolce ",
+    "name": "Paprica dolce",
     "id": "8c94dc03516d433a9d2cd90b3b6743c1",
-    "complete": true
+    "complete": false
   },
   {
     "name": "Cumino in polvere",
     "id": "506604ccb4c24ca1a7d74e3f267ebf6e",
-    "complete": true
+    "complete": false
   },
   {
     "name": "Aglio",
     "id": "87788a3f807e43f5a2db09d2d870899c",
-    "complete": true
-  },
-  {
-    "name": "Dado",
-    "id": "03fcb566756340158b4f13b7923ee16b",
-    "complete": true
-  },
-  {
-    "name": "Maschera sci e snowboard adulto e bambino 100 S3 - bel tempo - nera",
-    "id": "54e4344c403c4bd78d111894d679fd80",
-    "complete": true
-  },
-  {
-    "name": "Maglia termica sci bambino",
-    "id": "1e735524a30f40efbfcf86954660fe97",
-    "complete": true
-  },
-  {
-    "name": "Pantaloni termici sci bambino",
-    "id": "bcd1038d31f64244979078a844ed9b34",
-    "complete": true
-  },
-  {
-    "name": "Guanti sci bambina 100 blu e rosa fluo",
-    "id": "77852b25f4d3417ebaf3fd431c31ed70",
-    "complete": true
-  },
-  {
-    "name": "Guanti sci bambina 100 neri",
-    "id": "a91b0565763541fcbadff7bcf62a5bc4",
-    "complete": true
-  },
-  {
-    "name": "Pile montagna uomo MH100",
-    "id": "a931e22729dc4b2c944dafeda6670783",
     "complete": false
   },
   {
-    "name": "Doposci montagna uomo SH500 lacci neri",
-    "id": "3edd6eb198ff44c9b85dad665a04bfd1",
-    "complete": true
-  },
-  {
-    "name": "Doposci montagna uomo SH500 lacci marroni",
-    "id": "0969dd153f5d45659c14939419b058a8",
-    "complete": true
-  },
-  {
-    "name": "Pantaloni sci donna 180 neri",
-    "id": "78344505030a4f7bac7c7d505cb6a802",
-    "complete": true
-  },
-  {
-    "name": "Berretto sci adulto FIRSTHEAT nero",
-    "id": "4af60df6b3394653b77a2c94e868c8a7",
-    "complete": true
-  },
-  {
-    "name": "Canalina 16",
-    "id": "feaa67ec82fd4f75a6d9d87bb60b6ca0",
+    "name": "Pane",
+    "id": "50376c3ac9c04e38b933fac62496aa63",
     "complete": false
   },
   {
-    "name": "Gomito",
-    "id": "be700dd1a25e443a97796c783a230ee4",
-    "complete": true
+    "name": "Latte",
+    "id": "bbf08c497d75438d89e1c01e5dfee767",
+    "complete": false
   },
   {
-    "name": "Giuntura",
-    "id": "326d09a573ad427caa226d08c8564a39",
-    "complete": true
+    "name": "Affettati",
+    "id": "397a7709251b471b9cfcb9a5a09a3ee0",
+    "complete": false
   },
   {
-    "name": "Cassetta derivazione x 2",
-    "id": "09c3953cc8f740be8385c828b3076b2f",
-    "complete": true
+    "name": "Formaggio",
+    "id": "1e5ea0c4800b4db987d8a2071dcc1af9",
+    "complete": false
   },
   {
-    "name": "Trapano",
-    "id": "2265b6ec1bd349d0888054f8ec6fef3e",
-    "complete": true
+    "name": "Frutta",
+    "id": "38c3f54731384fe29dab232c8cc0f2e7",
+    "complete": false
   },
   {
-    "name": "Punte",
-    "id": "3c2c47d0205344238702a240191a8386",
-    "complete": true
+    "name": "Verdura",
+    "id": "c031f543457e4a46ba47357097483d0a",
+    "complete": false
   },
   {
-    "name": "Prolinga",
-    "id": "a4172ed129ad407a95af029ce98a15e3",
-    "complete": true
-  },
-  {
-    "name": "Shuco con allofgio",
-    "id": "3bc2302432a14d2095fd67ce0f693cf5",
-    "complete": true
-  },
-  {
-    "name": "Parete attrezzi",
-    "id": "5a6024b7922948108b4d863706cf2070",
+    "name": "Fresco",
+    "id": "ddedf77d97dd48d7a6468c351b23853a",
     "complete": false
   }
 ]

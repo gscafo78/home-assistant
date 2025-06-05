@@ -13,11 +13,8 @@ storage/
 *.db-shm
 *.db-wal
 *.fault
-!.yaml
-!.gitignore
-!.md
-!.sh
-!.js
+*.gz
+*.js
 !node-red/
 custom_components/
 zigbee2mqtt/log/

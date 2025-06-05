@@ -6,28 +6,28 @@
         "schedule_sunday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
         "battery_low": false,
         "frost_protection": "ON",
-        "child_lock": "UNLOCK",
+        "child_lock": "LOCK",
         "system_mode": "off",
-        "linkquality": 123,
+        "linkquality": 120,
         "scale_protection": "ON",
         "current_heating_setpoint": 16,
         "local_temperature_calibration": 3,
         "running_state": "idle",
-        "local_temperature": 20,
+        "local_temperature": 25,
         "schedule_monday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
         "schedule_tuesday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
         "schedule_friday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0"
     },
     "0xa4c13822e9318541": {
-        "voltage": 230,
+        "voltage": 227,
         "state": "ON",
         "countdown": 0,
         "power_outage_memory": "on",
         "indicator_mode": "on/off",
-        "linkquality": 87,
+        "linkquality": 94,
         "current": 0,
         "power": 0,
-        "energy": 3.97,
+        "energy": 57.77,
         "update": {
             "state": "idle",
             "installed_version": 4099,
@@ -35,15 +35,15 @@
         }
     },
     "0xa4c13884357b1a7b": {
-        "energy": 4.86,
-        "voltage": 226,
+        "energy": 62.74,
+        "voltage": 229,
         "state": "ON",
         "countdown": 0,
         "power_outage_memory": "on",
         "indicator_mode": "on/off",
-        "current": 0,
+        "current": 0.02,
         "power": 0,
-        "linkquality": 123,
+        "linkquality": 105,
         "update": {
             "state": "idle",
             "installed_version": 4099,
@@ -51,10 +51,10 @@
         }
     },
     "0xa4c138e3d6c1e19d": {
-        "system_mode": "auto",
+        "system_mode": "off",
         "running_state": "idle",
         "current_heating_setpoint": 16,
-        "local_temperature": 19,
+        "local_temperature": 23,
         "child_lock": "LOCK",
         "schedule_monday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
         "schedule_tuesday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
@@ -67,31 +67,31 @@
         "scale_protection": "ON",
         "schedule_sunday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
         "local_temperature_calibration": 2,
-        "linkquality": 25
+        "linkquality": 120
     },
     "0xa4c13867cc34647a": {
         "child_lock": "LOCK",
-        "schedule_monday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
-        "schedule_tuesday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
-        "schedule_wednesday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
-        "schedule_thursday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
-        "schedule_friday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
-        "schedule_saturday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
-        "schedule_sunday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
+        "schedule_monday": "06:00/21.0 08:00/16.0 12:00/21.0 14:00/16.0 18:00/21.0 22:00/16.0",
+        "schedule_tuesday": "06:00/21.0 08:00/16.0 12:00/21.0 14:00/16.0 18:00/21.0 22:00/16.0",
+        "schedule_wednesday": "06:00/21.0 08:00/16.0 12:00/21.0 14:00/16.0 18:00/21.0 22:00/16.0",
+        "schedule_thursday": "06:00/21.0 08:00/16.0 12:00/21.0 14:00/16.0 18:00/21.0 22:00/16.0",
+        "schedule_friday": "06:00/21.0 08:00/16.0 12:00/21.0 14:00/16.0 18:00/21.0 22:00/16.0",
+        "schedule_saturday": "06:00/21.0 08:00/16.0 12:00/21.0 14:00/16.0 18:00/21.0 22:00/16.0",
+        "schedule_sunday": "06:00/21.0 08:00/16.0 12:00/21.0 14:00/16.0 18:00/21.0 22:00/16.0",
         "battery_low": false,
         "frost_protection": "ON",
         "scale_protection": "ON",
-        "local_temperature_calibration": 2,
-        "system_mode": "auto",
+        "local_temperature_calibration": 0,
+        "system_mode": "off",
         "running_state": "idle",
         "local_temperature": 20,
         "current_heating_setpoint": 16,
-        "linkquality": 123
+        "linkquality": 65
     },
     "0xa4c1387e8d5d9d7c": {
         "running_state": "idle",
         "current_heating_setpoint": 16,
-        "local_temperature": 21,
+        "local_temperature": 26,
         "child_lock": "LOCK",
         "schedule_monday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
         "schedule_tuesday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
@@ -101,11 +101,11 @@
         "schedule_saturday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
         "schedule_sunday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
         "battery_low": false,
-        "system_mode": "auto",
+        "system_mode": "off",
         "local_temperature_calibration": 2,
         "scale_protection": "ON",
         "frost_protection": "ON",
-        "linkquality": 91
+        "linkquality": 87
     },
     "0xa4c1381fc6dea485": {
         "schedule_tuesday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
@@ -117,20 +117,20 @@
         "battery_low": false,
         "frost_protection": "ON",
         "local_temperature_calibration": 2,
-        "system_mode": "auto",
+        "system_mode": "off",
         "running_state": "idle",
-        "local_temperature": 19,
+        "local_temperature": 24,
         "current_heating_setpoint": 16,
         "child_lock": "LOCK",
         "schedule_monday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
         "scale_protection": "ON",
-        "linkquality": 123
+        "linkquality": 80
     },
     "0xa4c1385d95724ec1": {
         "system_mode": "off",
         "running_state": "idle",
         "current_heating_setpoint": 16,
-        "local_temperature": 19,
+        "local_temperature": 24,
         "child_lock": "LOCK",
         "schedule_monday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
         "schedule_tuesday": "06:30/20.5 08:00/16.0 17:00/20.0 22:00/16.0 23:00/16.0 23:30/16.0",
@@ -143,14 +143,14 @@
         "frost_protection": "ON",
         "scale_protection": "ON",
         "local_temperature_calibration": 2,
-        "linkquality": 109
+        "linkquality": 112
     },
     "0xa4c1383c9974f2ed": {
-        "humidity": 58.1,
-        "temperature": 21.1,
-        "battery": 100,
-        "voltage": 3000,
-        "linkquality": 167
+        "humidity": 44.8,
+        "temperature": 26.9,
+        "battery": 71,
+        "voltage": 2900,
+        "linkquality": 87
     },
     "0xa4c138faa331d764": {
         "voltage": 227,
@@ -158,23 +158,23 @@
         "countdown": 0,
         "power_outage_memory": "restore",
         "indicator_mode": "on/off",
-        "linkquality": 123,
+        "linkquality": 120,
         "update": {
             "state": "idle",
             "installed_version": 4099,
             "latest_version": 4099
         },
-        "energy": 0,
+        "energy": 0.62,
         "current": 0,
         "power": 0
     },
     "0xa4c1381a73981eff": {
-        "battery": 50,
-        "temperature": 16.9,
-        "humidity": 54,
+        "battery": 100,
+        "temperature": 22.2,
+        "humidity": 49,
         "temperature_unit": "celsius",
-        "temperature_calibration": -3,
+        "temperature_calibration": 0,
         "humidity_calibration": 0,
-        "linkquality": 87
+        "linkquality": 32
     }
 }
