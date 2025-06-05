@@ -1,0 +1,1191 @@
+views:
+  - title: Main
+    path: e
+    icon: mdi:home
+    badges: []
+    cards:
+      - type: custom:stack-in-card
+        title: Weather
+        card_mod:
+          style: |
+            ha-card {
+              color: var(--primary-color);
+            }
+        mode: vertical
+        cards:
+          - type: weather-forecast
+            show_current: true
+            show_forecast: true
+            entity: weather.forecast_home
+            forecast_type: daily
+            name: Meteo
+          - type: horizontal-stack
+            title: Temperature
+            cards:
+              - type: sensor
+                entity: sensor.termometro_living_temperature
+                name: Internal
+                show_name: true
+                show_icon: true
+              - type: sensor
+                entity: sensor.termometro_outdoor_temperature
+                name: External
+                show_name: true
+                show_icon: true
+          - type: horizontal-stack
+            title: Humidity
+            cards:
+              - type: sensor
+                entity: sensor.termometro_living_humidity
+                name: Internal
+                show_name: true
+                show_icon: true
+              - type: sensor
+                entity: sensor.termometro_outdoor_humidity
+                name: External
+                show_name: true
+                show_icon: true
+          - type: horizontal-stack
+            title: Radiators
+            cards:
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: input_boolean.radiator_set_auto
+                icon: mdi:radiator-disabled
+                name: Auto
+                card_mod:
+                  style: |
+                    # ha-card {
+                    #   --ha-card-background: teal;
+                    #   color: var(--primary-color);
+                    # }
+                    ha-icon {
+                      color: {% if is_state('input_boolean.radiator_set_auto', 'on') %} yellow {% else %} var(--primary-text-color) {% endif %};
+                    }
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: input_boolean.radiator_set_heat
+                name: Heat
+                icon: mdi:radiator
+                card_mod:
+                  style: |
+                    # ha-card {
+                    #   --ha-card-background: teal;
+                    #   color: var(--primary-color);
+                    # }
+                    ha-icon {
+                      color: {% if is_state('input_boolean.radiator_set_heat', 'on') %} yellow {% else %} var(--primary-text-color) {% endif %};
+                    }
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: input_boolean.radiator_set_off
+                icon: mdi:radiator-off
+                name: "Off"
+                card_mod:
+                  style: |
+                    # ha-card {
+                    #   --ha-card-background: teal;
+                    #   color: var(--primary-color);
+                    # }
+                    ha-icon {
+                      color: {% if is_state('input_boolean.radiator_set_off', 'on') %} yellow {% else %} var(--primary-text-color) {% endif %};
+                    }
+            columns: 3
+      # - type: custom:stack-in-card
+      #   card_mod:
+      #     style: |
+      #       ha-card {
+      #         color: var(--primary-color);
+      #       }
+      #   mode: vertical
+      #   cards:
+      #     - type: custom:stack-in-card
+      #       title: Lights
+      #       card_mod:
+      #         style: |
+      #           ha-card {
+      #             color: var(--primary-color);
+      #           }
+      #       mode: horizontal
+      #       cards:
+      #         - show_name: true
+      #           show_icon: true
+      #           type: custom:button-card
+      #           tap_action:
+      #             action: toggle
+      #           entity: switch.sonoff_100125820b
+      #           card_mod:
+      #             style: |
+      #               ha-card {
+      #                 --ha-card-background: teal;
+      #                 color: var(--primary-color);
+      #               }
+      #           icon: mdi:ceiling-light
+      #           show_state: false
+      #           icon_height: 50px
+      #           name: Dinning
+      #         - show_name: true
+      #           show_icon: true
+      #           type: custom:button-card
+      #           tap_action:
+      #             action: toggle
+      #           entity: switch.sonoff_10012578a5
+      #           card_mod:
+      #             style: |
+      #               ha-card {
+      #                 --ha-card-background: teal;
+      #                 color: var(--primary-color);
+      #               }
+      #           icon: mdi:lightbulb
+      #           show_state: false
+      #           icon_height: 50px
+      #           name: Kitchen
+      #         - show_name: true
+      #           show_icon: true
+      #           type: custom:button-card
+      #           tap_action:
+      #             action: toggle
+      #           entity: switch.sonoff_100125cc32
+      #           card_mod:
+      #             style: |
+      #               ha-card {
+      #                 --ha-card-background: teal;
+      #                 color: var(--primary-color);
+      #               }
+      #           icon: mdi:lightbulb
+      #           show_state: false
+      #           icon_height: 50px
+      #           name: Living
+      #         - show_name: true
+      #           show_icon: true
+      #           type: custom:button-card
+      #           tap_action:
+      #             action: toggle
+      #           entity: switch.sonoff_1001261672
+      #           card_mod:
+      #             style: |
+      #               ha-card {
+      #                 --ha-card-background: teal;
+      #                 color: var(--primary-color);
+      #               }
+      #           icon: mdi:lightbulb
+      #           show_state: false
+      #           icon_height: 50px
+      #           name: Hall
+      #         - show_name: true
+      #           show_icon: true
+      #           type: custom:button-card
+      #           tap_action:
+      #             action: toggle
+      #           entity: switch.sonoff_1001250e7b
+      #           card_mod:
+      #             style: |
+      #               ha-card {
+      #                 --ha-card-background: teal;
+      #                 color: var(--primary-color);
+      #               }
+      #           icon: mdi:coach-lamp
+      #           show_state: false
+      #           icon_height: 50px
+      #           name: Hall
+      #     - type: custom:stack-in-card
+      #       title: Switches
+      #       card_mod:
+      #         style: |
+      #           ha-card {
+      #             color: var(--primary-color);
+      #           }
+      #       mode: horizontal
+      #       cards:
+      #         - show_name: true
+      #           show_icon: true
+      #           type: custom:button-card
+      #           tap_action:
+      #             action: toggle
+      #           entity: switch.sonoff_1000657d6b
+      #           card_mod:
+      #             style: |
+      #               ha-card {
+      #                 --ha-card-background: teal;
+      #                 color: var(--primary-color);
+      #               }
+      #           icon: mdi:cctv
+      #           show_state: false
+      #           icon_height: 50px
+      #           name: Cameras
+      #         - show_name: true
+      #           show_icon: true
+      #           type: custom:button-card
+      #           tap_action:
+      #             action: toggle
+      #           entity: switch.sonoff_10006965b5
+      #           card_mod:
+      #             style: |
+      #               ha-card {
+      #                 --ha-card-background: teal;
+      #                 color: var(--primary-color);
+      #               }
+      #           icon: mdi:sprinkler-variant
+      #           show_state: false
+      #           icon_height: 50px
+      #           name: irrigation
+  - title: Roller Shutter
+    icon: mdi:window-shutter
+    path: Tapparelle
+    subview: false
+    visible:
+      - user: d627b04a00eb42ecb31788f8701a4ecb
+    badges: []
+    cards:
+      - type: custom:stack-in-card
+        title: Roller Shutter
+        card_mod:
+          style: |
+            ha-card {
+              color: var(--primary-color);
+            }
+        mode: vertical
+        cards:
+          - type: custom:stack-in-card
+            card_mod:
+              style: |
+                ha-card {
+                  color: var(--primary-color);
+                }
+            mode: vertical
+            cards:
+              - type: custom:stack-in-card
+                title: Living
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: var(--primary-color);
+                    }
+                mode: horizontal
+                cards:
+                  - type: custom:stack-in-card
+                    title: Balcony
+                    mode: horizontal
+                    card_mod:
+                      style: |
+                        ha-card {
+                          color: var(--primary-color);
+                        }
+                    cards:
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_1000463749_3
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter
+                        show_state: false
+                        icon_height: 50px
+                        name: Close
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_1000463749_4
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter-open
+                        show_state: false
+                        icon_height: 50px
+                        name: Open
+                  - type: custom:stack-in-card
+                    title: Dinning
+                    mode: horizontal
+                    card_mod:
+                      style: |
+                        ha-card {
+                          color: var(--primary-color);
+                        }
+                    cards:
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_1000463749_1
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter
+                        show_state: false
+                        icon_height: 50px
+                        name: Close
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_1000463749_2
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter-open
+                        show_state: false
+                        icon_height: 50px
+                        name: Open
+                  - type: custom:stack-in-card
+                    title: Living
+                    mode: horizontal
+                    card_mod:
+                      style: |
+                        ha-card {
+                          color: var(--primary-color);
+                        }
+                    cards:
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_10005a9fdb_1
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter
+                        show_state: false
+                        icon_height: 50px
+                        name: Close
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_10005a9fdb_2
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter-open
+                        show_state: false
+                        icon_height: 50px
+                        name: Open
+                columns: 3
+              - type: custom:stack-in-card
+                mode: horizontal
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: var(--primary-color);
+                    }
+                cards:
+                  - show_name: false
+                    show_icon: true
+                    type: custom:button-card
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.tapparelle_giorno_down
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: teal;
+                          color: var(--primary-color);
+                        }
+                    icon: mdi:window-shutter
+                    show_state: false
+                    icon_height: 50px
+                    name: Close
+                  - show_name: false
+                    show_icon: true
+                    type: custom:button-card
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.tapparelle_giorno_up
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: teal;
+                          color: var(--primary-color);
+                        }
+                    icon: mdi:window-shutter-open
+                    show_state: false
+                    icon_height: 50px
+                    name: Open
+                  - show_name: false
+                    show_icon: true
+                    type: custom:button-card
+                    tap_action:
+                      action: toggle
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: teal;
+                          color: var(--primary-color);
+                        }
+                    entity: input_boolean.tapparelle_up_mattina
+                    icon: mdi:weather-sunset-up
+                    show_state: false
+                    icon_height: 50px
+                    name: Close
+                  - show_name: false
+                    show_icon: true
+                    type: custom:button-card
+                    tap_action:
+                      action: toggle
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: teal;
+                          color: var(--primary-color);
+                        }
+                    entity: input_boolean.tapparelle_giorno_down_sera
+                    icon: mdi:weather-sunset-down
+                    show_state: false
+                    icon_height: 50px
+                    name: Close
+              - type: custom:stack-in-card
+                title: Bedrooms
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: var(--primary-color);
+                    }
+                mode: horizontal
+                cards:
+                  - type: custom:stack-in-card
+                    title: Bedroom
+                    mode: horizontal
+                    card_mod:
+                      style: |
+                        ha-card {
+                          color: var(--primary-color);
+                        }
+                    cards:
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_1000205d78_1
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter
+                        show_state: false
+                        icon_height: 50px
+                        name: Close
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_1000205d78_2
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter-open
+                        show_state: false
+                        icon_height: 50px
+                        name: Open
+                  - type: custom:stack-in-card
+                    title: Kidsroom
+                    mode: horizontal
+                    card_mod:
+                      style: |
+                        ha-card {
+                          color: var(--primary-color);
+                        }
+                    cards:
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_1000a8c8b9_1
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter
+                        show_state: false
+                        icon_height: 50px
+                        name: Close
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_1000a8c8b9_2
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter-open
+                        show_state: false
+                        icon_height: 50px
+                        name: Open
+                  - type: custom:stack-in-card
+                    title: Bathroom
+                    mode: horizontal
+                    card_mod:
+                      style: |
+                        ha-card {
+                          color: var(--primary-color);
+                        }
+                    cards:
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_1000205d78_3
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter
+                        show_state: false
+                        icon_height: 50px
+                        name: Close
+                      - show_name: false
+                        show_icon: true
+                        type: custom:button-card
+                        tap_action:
+                          action: toggle
+                        entity: switch.sonoff_1000205d78_4
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --ha-card-background: teal;
+                              color: var(--primary-color);
+                            }
+                        icon: mdi:window-shutter-open
+                        show_state: false
+                        icon_height: 50px
+                        name: Open
+              - type: custom:stack-in-card
+                mode: horizontal
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: var(--primary-color);
+                    }
+                cards:
+                  - show_name: false
+                    show_icon: true
+                    type: custom:button-card
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.tapparelle_notte_down
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: teal;
+                          color: var(--primary-color);
+                        }
+                    icon: mdi:window-shutter
+                    show_state: false
+                    icon_height: 50px
+                    name: Close
+                  - show_name: false
+                    show_icon: true
+                    type: custom:button-card
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.tapparelle_notte_up
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: teal;
+                          color: var(--primary-color);
+                        }
+                    icon: mdi:window-shutter-open
+                    show_state: false
+                    icon_height: 50px
+                    name: Open
+                  - show_name: false
+                    show_icon: true
+                    type: custom:button-card
+                    tap_action:
+                      action: toggle
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: teal;
+                          color: var(--primary-color);
+                        }
+                    entity: input_boolean.tapparelle_notte_up_mattina
+                    icon: mdi:weather-sunset-up
+                    show_state: false
+                    icon_height: 50px
+                    name: Open
+                  - show_name: false
+                    show_icon: true
+                    type: custom:button-card
+                    tap_action:
+                      action: toggle
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: teal;
+                          color: var(--primary-color);
+                        }
+                    entity: input_boolean.tapparelle_notte_down_sera
+                    icon: mdi:weather-sunset-down
+                    show_state: false
+                    icon_height: 50px
+                    name: Down
+                columns: 3
+
+  - title: Luci
+    path: luci
+    icon: mdi:lightbulb
+    subview: false
+    visible:
+      - user: d627b04a00eb42ecb31788f8701a4ecb
+    badges: []
+    cards:
+      - type: custom:stack-in-card
+        card_mod:
+          style: |
+            ha-card {
+              color: var(--primary-color);
+            }
+        mode: vertical
+        cards:
+          - type: custom:stack-in-card
+            title: Lights
+            card_mod:
+              style: |
+                ha-card {
+                  color: var(--primary-color);
+                }
+            mode: horizontal
+            cards:
+              - show_name: true
+                show_icon: true
+                type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.sonoff_100125820b
+                card_mod:
+                  style: |
+                    ha-card {
+                      --ha-card-background: teal;
+                      color: var(--primary-color);
+                    }
+                icon: mdi:ceiling-light
+                show_state: false
+                icon_height: 50px
+                name: Dinning
+              - show_name: true
+                show_icon: true
+                type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.sonoff_10012578a5
+                card_mod:
+                  style: |
+                    ha-card {
+                      --ha-card-background: teal;
+                      color: var(--primary-color);
+                    }
+                icon: mdi:lightbulb
+                show_state: false
+                icon_height: 50px
+                name: Kitchen
+              - show_name: true
+                show_icon: true
+                type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.sonoff_100125cc32
+                card_mod:
+                  style: |
+                    ha-card {
+                      --ha-card-background: teal;
+                      color: var(--primary-color);
+                    }
+                icon: mdi:lightbulb
+                show_state: false
+                icon_height: 50px
+                name: Living
+              - show_name: true
+                show_icon: true
+                type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.sonoff_1001261672
+                card_mod:
+                  style: |
+                    ha-card {
+                      --ha-card-background: teal;
+                      color: var(--primary-color);
+                    }
+                icon: mdi:lightbulb
+                show_state: false
+                icon_height: 50px
+                name: Hall
+              - show_name: true
+                show_icon: true
+                type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.sonoff_1001250e7b
+                card_mod:
+                  style: |
+                    ha-card {
+                      --ha-card-background: teal;
+                      color: var(--primary-color);
+                    }
+                icon: mdi:coach-lamp
+                show_state: false
+                icon_height: 50px
+                name: Hall
+          - type: custom:stack-in-card
+            title: Switches
+            card_mod:
+              style: |
+                ha-card {
+                  color: var(--primary-color);
+                }
+            mode: horizontal
+            cards:
+              - show_name: true
+                show_icon: true
+                type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.sonoff_1000657d6b
+                card_mod:
+                  style: |
+                    ha-card {
+                      --ha-card-background: teal;
+                      color: var(--primary-color);
+                    }
+                icon: mdi:cctv
+                show_state: false
+                icon_height: 50px
+                name: Cameras
+              - show_name: true
+                show_icon: true
+                type: custom:button-card
+                tap_action:
+                  action: toggle
+                entity: switch.sonoff_10006965b5
+                card_mod:
+                  style: |
+                    ha-card {
+                      --ha-card-background: teal;
+                      color: var(--primary-color);
+                    }
+                icon: mdi:sprinkler-variant
+                show_state: false
+                icon_height: 50px
+                name: irrigation
+
+  - title: Radiatori
+    path: radiatori
+    icon: mdi:radiator
+    subview: false
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: thermostat
+            entity: climate.radiatore_cucina
+            features:
+              - type: climate-hvac-modes
+                hvac_modes:
+                  - "off"
+                  - auto
+                  - heat
+            name: Kitchen
+          - type: thermostat
+            entity: climate.rediatore_ingresso
+            name: Hall
+            features:
+              - type: climate-hvac-modes
+                hvac_modes:
+                  - "off"
+                  - auto
+                  - heat
+      - type: vertical-stack
+        cards:
+          - type: thermostat
+            entity: climate.radiatore_camera
+            name: Bedroom
+            features:
+              - type: climate-hvac-modes
+                hvac_modes:
+                  - "off"
+                  - auto
+                  - heat
+          - type: thermostat
+            entity: climate.radiatore_cameretta
+            features:
+              - type: climate-hvac-modes
+                hvac_modes:
+                  - "off"
+                  - auto
+                  - heat
+            name: Kids Room
+      - type: vertical-stack
+        cards:
+          - type: thermostat
+            entity: climate.radiatore_bagno_nero
+            name: Black Bathroom
+            features:
+              - type: climate-hvac-modes
+                hvac_modes:
+                  - "off"
+                  - auto
+                  - heat
+          - type: thermostat
+            entity: climate.radiatore_bagno_rosso
+            features:
+              - type: climate-hvac-modes
+                hvac_modes:
+                  - "off"
+                  - auto
+                  - heat
+            name: Red Bathroom
+  - title: Garage
+    path: Garage
+    icon: mdi:garage
+    badges: []
+    cards:
+      - type: todo-list
+        entity: todo.shopping_list
+        title: Fresco
+        hide_completed: false
+      - type: todo-list
+        entity: todo.shopping_list
+        title: Macelleria
+      - type: todo-list
+        entity: todo.shopping_list
+        title: Pescheria
+      - type: todo-list
+        entity: todo.shopping_list
+        title: Prodotti per la casa
+  # - title: Telecamere
+  #   path: telecamere
+  #   icon: mdi:cctv
+  #   badges: []
+  #   cards:
+  #     - type: vertical-stack
+  #       cards:
+  #         - type: picture-entity
+  #           entity: camera.dcs_5000l
+  #           show_state: false
+  #           show_name: false
+  #           camera_view: live
+  #           tap_action:
+  #             action: none
+  #           hold_action:
+  #             action: none
+  #           aspect_ratio: 800x600
+  #         - type: entities
+  #           entities:
+  #             - entity: input_select.camera_pos
+  #               secondary_info: none
+  #               name: " "
+  #           title: Camera Position
+  #           square: true
+  #         - type: grid
+  #           cards:
+  #             - type: custom:button-card
+  #               show_name: false
+  #               show_icon: true
+  #               name: Up
+  #               tap_action:
+  #                 action: call-service
+  #                 service: shell_command.front_camera_up
+  #               icon: mdi:arrow-up-bold
+  #               styles:
+  #                 card:
+  #                   - background-color: yellow
+  #                 icon:
+  #                   - color: black
+  #             - type: custom:button-card
+  #               show_name: false
+  #               show_icon: true
+  #               name: Down
+  #               tap_action:
+  #                 action: call-service
+  #                 service: shell_command.front_camera_down
+  #               icon: mdi:arrow-down-bold
+  #               styles:
+  #                 card:
+  #                   - background-color: yellow
+  #                 icon:
+  #                   - color: black
+  #             - type: custom:button-card
+  #               show_name: false
+  #               show_icon: true
+  #               name: Left
+  #               tap_action:
+  #                 action: call-service
+  #                 service: shell_command.front_camera_sx
+  #               icon: mdi:arrow-left-bold
+  #               styles:
+  #                 card:
+  #                   - background-color: yellow
+  #                 icon:
+  #                   - color: black
+  #             - type: custom:button-card
+  #               show_name: false
+  #               show_icon: true
+  #               name: Right
+  #               tap_action:
+  #                 action: call-service
+  #                 service: shell_command.front_camera_dx
+  #               icon: mdi:arrow-right-bold
+  #               styles:
+  #                 card:
+  #                   - background-color: yellow
+  #                 icon:
+  #                   - color: black
+  #           columns: 4
+  #     - type: grid
+  #       square: false
+  #       columns: 1
+  #       cards:
+  #         - show_state: true
+  #           show_name: true
+  #           camera_view: live
+  #           type: picture-entity
+  #           entity: camera.ranger_2c_3mp_living_camera
+  #           name: Living
+  #         - type: entities
+  #           entities:
+  #             - entity: sensor.ranger_2c_3mp_living_status
+  #               name: Status
+  #           title: Living
+  #     - type: grid
+  #       square: false
+  #       columns: 1
+  #       cards:
+  #         - show_state: true
+  #           show_name: true
+  #           camera_view: live
+  #           type: picture-entity
+  #           entity: camera.ranger_2c_3mp_61f3_box_camera
+  #           name: Box
+  #         - type: entities
+  #           entities:
+  #             - entity: sensor.ranger_2c_3mp_61f3_box_status
+  #               name: Status
+  #           title: " Box"
+  - title: Auto
+    path: auto
+    icon: mdi:car-estate
+    badges: []
+    cards:
+      - type: map
+        entities:
+          - entity: person.tesla
+        dark_mode: false
+        title: Posizione
+        default_zoom: 13
+      - type: gauge
+        entity: sensor.battery
+        name: Batteria
+        needle: false
+        severity:
+          green: 35
+          yellow: 20
+          red: 0
+      - type: entities
+        entities:
+          - entity: sensor.odometer
+          - entity: sensor.range
+          - entity: lock.doors
+            name: Doors
+          - entity: sensor.temperature_inside
+          - entity: sensor.temperature_outside
+      - type: thermostat
+        entity: climate.hvac_climate_system
+        name: Condizionamento Abitacolo
+        features:
+          - type: climate-hvac-modes
+            hvac_modes:
+              - heat_cool
+              - "off"
+          - type: climate-preset-modes
+            style: dropdown
+            preset_modes:
+              - Normal
+              - Defrost
+              - Keep On
+              - Dog Mode
+              - Camp Mode
+      - type: entities
+        entities:
+          - entity: number.charge_limit
+          - entity: number.charging_amps
+          - entity: binary_sensor.charger
+          - entity: switch.charger
+          - entity: cover.charger_door
+          - entity: lock.charge_port_latch
+          - entity: binary_sensor.charging
+          - entity: sensor.charger_power
+          - entity: sensor.time_charge_complete
+          - entity: sensor.giovanni_scafetta_gmail_com_charging_rate
+          - entity: sensor.energy_added
+        title: Charge Status
+      - type: entities
+        entities:
+          - entity: sensor.tpms_front_left
+            name: Front Left
+          - entity: sensor.tpms_front_right
+            name: Front Right
+          - entity: sensor.tpms_rear_left
+            name: Rear Left
+          - entity: sensor.tpms_rear_right
+            name: Rear Right
+        title: Pressione Pneumatici
+        state_color: false
+  # - title: Luci
+  #   path: luci
+  #   icon: mdi:lightbulb
+  #   subview: false
+  #   visible:
+  #     - user: d627b04a00eb42ecb31788f8701a4ecb
+  #   badges: []
+  #   cards:
+  #     - type: vertical-stack
+  #       cards:
+  #         - show_name: true
+  #           show_icon: true
+  #           type: button
+  #           tap_action:
+  #             action: toggle
+  #           entity: switch.sonoff_100125820b
+  #           icon: mdi:lightbulb
+  #           show_state: false
+  #           icon_height: 50px
+  #           name: Cucina
+  #         - show_name: true
+  #           show_icon: true
+  #           type: button
+  #           tap_action:
+  #             action: toggle
+  #           entity: switch.sonoff_10012578a5
+  #           icon: mdi:lightbulb
+  #           show_state: false
+  #           icon_height: 50px
+  #           name: Piano Cotura
+  #         - show_name: true
+  #           show_icon: true
+  #           type: button
+  #           tap_action:
+  #             action: toggle
+  #           entity: switch.sonoff_100125cc32
+  #           icon: mdi:lightbulb
+  #           show_state: false
+  #           icon_height: 50px
+  #           name: Living
+  #     - type: vertical-stack
+  #       cards:
+  #         - show_name: true
+  #           show_icon: true
+  #           type: button
+  #           tap_action:
+  #             action: toggle
+  #           entity: switch.sonoff_1001250e7b
+  #           icon: mdi:lightbulb
+  #           show_state: false
+  #           icon_height: 50px
+  #           name: Ingresso
+  #         - show_name: true
+  #           show_icon: true
+  #           type: button
+  #           tap_action:
+  #             action: toggle
+  #           entity: switch.sonoff_1001261672
+  #           icon: mdi:lightbulb
+  #           show_state: false
+  #           icon_height: 50px
+  #           name: Ingresso Faretti
+  #     - type: horizontal-stack
+  #       cards:
+  #         - show_name: true
+  #           show_icon: true
+  #           type: button
+  #           tap_action:
+  #             action: toggle
+  #           entity: input_button.radiator_set_auto
+  #           name: Auto
+  #         - show_name: true
+  #           show_icon: true
+  #           type: button
+  #           tap_action:
+  #             action: toggle
+  #           entity: input_button.radiator_set_off
+  #           name: "Off"
+  #         - show_name: true
+  #           show_icon: true
+  #           type: button
+  #           tap_action:
+  #             action: toggle
+  #           entity: input_button.radiator_set_heat
+  #           name: Heat
+  # - title: Dispositivi
+  #   path: dispositivi
+  #   icon: mdi:connection
+  #   visible:
+  #     - user: d627b04a00eb42ecb31788f8701a4ecb
+  #   badges: []
+  #   cards:
+  #     - type: entities
+  #       entities:
+  #         - entity: switch.sonoff_1000657d6b
+  #           icon: mdi:webcam
+  #           secondary_info: last-changed
+  #           name: Telecamere
+  #         - entity: switch.sonoff_10006965b5
+  #           icon: mdi:sprinkler-variant
+  #           secondary_info: last-changed
+  #           name: Irrigazione
+  #       title: Dispositivi
+  #       show_header_toggle: false
+  #       state_color: true
+# title: Dispositivi

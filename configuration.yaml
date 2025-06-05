@@ -3,7 +3,6 @@ default_config:
 frontend:
   themes: !include_dir_merge_named themes
 
-
 automation: !include_dir_merge_list automations/
 script: !include scripts.yaml
 scene: !include scenes.yaml
@@ -51,7 +50,16 @@ zone:
     latitude: !secret scauri_latitude
     longitude: !secret scauri_longitude
     radius: 50
+
 lovelace:
+  mode: storage
+  dashboards:
+    lovelace-yaml:
+      mode: yaml
+      title: Main Dashboard # Optional but recommended
+      filename: lovelace/custom_dashboard.yaml
+      icon: mdi:home # Optional
+      show_in_sidebar: true # Optional
   resources:
     - url: /local/mini-graph-card-bundle.js
       type: module
