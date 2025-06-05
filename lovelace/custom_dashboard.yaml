@@ -3,7 +3,9 @@ views:
     path: home
     icon: mdi:home
     visible:
-      - user: !secret user_giovanni
+      - user: !secret id_giovanni
+      - user: !secret id_flora
+      - user: !secret id_gabriele
     badges: []
     cards:
       - type: custom:stack-in-card
@@ -245,7 +247,10 @@ views:
     path: Tapparelle
     subview: false
     visible:
-      - user: !secret user_giovanni
+      - user: !secret id_giovanni
+      - user: !secret id_flora
+      - user: !secret id_gabriele
+
     badges: []
     cards:
       - type: custom:stack-in-card
@@ -681,7 +686,10 @@ views:
     icon: mdi:lightbulb
     subview: false
     visible:
-      - user: !secret user_giovanni
+      - user: !secret id_giovanni
+      - user: !secret id_flora
+      - user: !secret id_gabriele
+
     badges: []
     cards:
       - type: custom:stack-in-card
@@ -889,9 +897,11 @@ views:
                   - auto
                   - heat
             name: Red Bathroom
-  - title: Garage
-    path: Garage
-    icon: mdi:garage
+  - title: todo-list
+    path: todo-list
+    icon: mdi:format-list-checks
+    visible:
+      - user: !secret id_giovanni
     badges: []
     cards:
       - type: todo-list
@@ -1019,6 +1029,9 @@ views:
   - title: Auto
     path: auto
     icon: mdi:car-estate
+    visible:
+      - user: !secret id_giovanni
+
     badges: []
     cards:
       - type: map
@@ -1090,7 +1103,7 @@ views:
   #   icon: mdi:lightbulb
   #   subview: false
   #   visible:
-  #     - user: !secret user_giovanni
+  #     - user: !secret id_giovanni
   #   badges: []
   #   cards:
   #     - type: vertical-stack
@@ -1174,7 +1187,7 @@ views:
   #   path: dispositivi
   #   icon: mdi:connection
   #   visible:
-  #     - user: !secret user_giovanni
+  #     - user: !secret id_giovanni
   #   badges: []
   #   cards:
   #     - type: entities
