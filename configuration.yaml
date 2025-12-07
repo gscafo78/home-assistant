@@ -57,7 +57,7 @@ lovelace:
     lovelace-yaml:
       mode: yaml
       title: Main Dashboard # Optional but recommended
-      filename: lovelace/custom_dashboard.yaml
+      filename: lovelace/ui-lovelace.yaml
       icon: mdi:home # Optional
       show_in_sidebar: true # Optional
   resources:
@@ -69,7 +69,9 @@ recorder:
 
 http:
   use_x_forwarded_for: true
-  trusted_proxies: 10.211.12.4
+  trusted_proxies:
+    - 10.211.12.4
+    - 10.211.13.0/24
 # input_boolean:
 #   radiator_set_auto:
 #     name: Radiator Auto
